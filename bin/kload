@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+# kload works inside your shell: it sets KUBECONFIG there, which a separate program cannot do.
+# Once kload.zsh is sourced from ~/.zshrc, the kload function takes over from this command.
+
+script=${0:h:h}/share/kload/kload.zsh          # Homebrew: <prefix>/bin and <prefix>/share/kload
+[[ -f $script ]] || script=${0:A:h:h}/kload.zsh  # a clone of the repository
+
+if [[ $1 == -v || $1 == --version ]]; then
+  source $script && print -r -- "kload $KLOAD_VERSION"
+  exit
+fi
+
+print -u2 -r -- "kload runs inside your shell. Add this line to ~/.zshrc, then open a new terminal:
+
+  source ${script:a}
+"
+exit 1

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="290" viewBox="0 0 880 290" role="img" aria-label="Running kload: a menu lists kubeconfig files and their clusters; the down arrow moves to eks-staging and Enter loads it">
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 15px; white-space: pre; }
+    .dim { fill: #6B7280; }
+    .txt { fill: #C9D1E3; }
+    .key text { font-size: 13px; fill: #E5E7EB; }
+
+    .typing  { animation: type 10s steps(5, end) infinite; }
+    .cursor1 { animation: cursor1 10s infinite; }
+    .menu    { animation: menu 10s infinite; }
+    .pick    { animation: pick 10s infinite; }
+    .result  { animation: result 10s infinite; }
+    .cursor2 { animation: blink 1s steps(1) infinite; }
+    .all     { animation: all 10s infinite; }
+    .k0 { animation: k0 10s infinite; }
+    .k1 { animation: k1 10s infinite; }
+    .k2 { animation: k2 10s infinite; }
+    .k3 { animation: k3 10s infinite; }
+
+    @keyframes type    { 0%, 3% { transform: translateX(0); } 9%, 100% { transform: translateX(45px); } }
+    @keyframes cursor1 { 0%, 11.9% { opacity: 1; } 12%, 100% { opacity: 0; } }
+    @keyframes menu    { 0%, 11.9% { opacity: 0; } 12%, 54.9% { opacity: 1; } 55%, 100% { opacity: 0; } }
+    @keyframes pick    { 0%, 29.9% { transform: translateY(0); } 30%, 39.9% { transform: translateY(28px); } 40%, 100% { transform: translateY(56px); } }
+    @keyframes result  { 0%, 54.9% { opacity: 0; } 55%, 100% { opacity: 1; } }
+    @keyframes blink   { 0% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes all     { 0%, 95% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    @keyframes k0 { 0%, 10.4% { opacity: 0; } 10.5%, 17% { opacity: 1; } 17.1%, 100% { opacity: 0; } }
+    @keyframes k1 { 0%, 29.9% { opacity: 0; } 30%, 36% { opacity: 1; } 36.1%, 100% { opacity: 0; } }
+    @keyframes k2 { 0%, 39.9% { opacity: 0; } 40%, 46% { opacity: 1; } 46.1%, 100% { opacity: 0; } }
+    @keyframes k3 { 0%, 51.9% { opacity: 0; } 52%, 58% { opacity: 1; } 58.1%, 100% { opacity: 0; } }
+  </style>
+
+  <!-- Window -->
+  <rect x="0.5" y="0.5" width="879" height="289" rx="12" fill="#0F1117" stroke="#2A2F3A"/>
+  <circle cx="22" cy="20" r="6" fill="#FF5F57"/>
+  <circle cx="42" cy="20" r="6" fill="#FEBC2E"/>
+  <circle cx="62" cy="20" r="6" fill="#28C840"/>
+  <text x="440" y="25" text-anchor="middle" class="dim" style="font-size:13px">zsh</text>
+  <line x1="0" y1="40" x2="880" y2="40" stroke="#1F2430"/>
+
+  <g class="all">
+    <!-- Prompt, with kload typed in -->
+    <text x="24" y="72"><tspan fill="#22D3EE">~</tspan><tspan fill="#A78BFA"> $ </tspan><tspan fill="#E5E7EB">kload</tspan></text>
+    <g class="typing">
+      <rect x="60" y="56" width="60" height="22" fill="#0F1117"/>
+      <rect class="cursor1" x="60" y="58" width="9" height="19" fill="#A78BFA"/>
+    </g>
+
+    <!-- Menu -->
+    <g class="menu">
+      <rect class="pick" x="20" y="110" width="520" height="26" rx="6" fill="#7C5CFF" fill-opacity=".28" stroke="#7C5CFF" stroke-opacity=".75"/>
+      <text class="pick" x="26" y="128" fill="#A78BFA">&gt;</text>
+      <text x="44" y="98" class="dim">FILE</text>
+      <text x="204" y="98" class="dim">CLUSTER</text>
+      <text x="44" y="128" class="txt">config</text>
+      <text x="204" y="128" class="txt">docker-desktop  <tspan class="dim">(current)</tspan></text>
+      <text x="44" y="156" class="txt">dev.yaml</text>
+      <text x="204" y="156" class="txt">kind-dev</text>
+      <text x="44" y="184" class="txt">staging.yaml</text>
+      <text x="204" y="184" class="txt">eks-staging</text>
+      <text x="44" y="212" class="txt">prod.yaml</text>
+      <text x="204" y="212" class="txt">gke-prod</text>
+      <text x="24" y="246" class="dim">↑/↓ move · Enter load · Esc cancel</text>
+    </g>
+
+    <!-- Result -->
+    <g class="result">
+      <text x="24" y="100"><tspan fill="#4ADE80">Loaded</tspan><tspan fill="#fff" font-weight="700"> eks-staging</tspan><tspan class="txt"> from staging.yaml </tspan><tspan class="dim">(context eks-staging, namespace default)</tspan></text>
+      <text x="24" y="128"><tspan fill="#22D3EE">~</tspan><tspan fill="#A78BFA"> $ </tspan></text>
+      <rect class="cursor2" x="60" y="114" width="9" height="19" fill="#A78BFA"/>
+    </g>
+  </g>
+
+  <!-- Keys being pressed -->
+  <g class="key" transform="translate(800 240)">
+    <g class="k0"><rect x="-18" width="74" height="30" rx="7" fill="#1C2130" stroke="#3A4154"/><text x="19" y="20" text-anchor="middle">⏎ Enter</text></g>
+    <g class="k1"><rect x="18" width="38" height="30" rx="7" fill="#1C2130" stroke="#3A4154"/><text x="37" y="20" text-anchor="middle">↓</text></g>
+    <g class="k2"><rect x="18" width="38" height="30" rx="7" fill="#1C2130" stroke="#3A4154"/><text x="37" y="20" text-anchor="middle">↓</text></g>
+    <g class="k3"><rect x="-18" width="74" height="30" rx="7" fill="#1C2130" stroke="#3A4154"/><text x="19" y="20" text-anchor="middle">⏎ Enter</text></g>
+  </g>
+</svg>
